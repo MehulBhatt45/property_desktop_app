@@ -1,0 +1,63 @@
+{
+  "name": "rojkind",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
+    "electron-is-dev": "^1.1.0",
+    "jquery": "^3.4.1",
+    "loadjs": "^3.6.1",
+    "material-ui": "^0.20.2",
+    "react": "^16.8.6",
+    "react-confirm-alert": "^2.4.1",
+    "react-dom": "^16.8.6",
+    "react-google-maps": "^9.4.5",
+    "react-image-lightbox": "^5.1.0",
+    "react-indexed-db": "0.0.2",
+    "react-loader-spinner": "^2.3.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "react-slick": "^0.24.0",
+    "react-tap-event-plugin": "^3.0.3",
+    "react-time-ago": "^5.0.4",
+    "recompose": "^0.30.0",
+    "shortid": "^2.2.14",
+    "sweetalert": "^2.1.2",
+    "timeago-react": "^2.0.1",
+    "wait-on": "^3.2.0"
+  },
+  "homepage" : "./",
+  "main": "public/electron.js",
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0",
+    "typescript": "^3.4.5"
+  }
+}
